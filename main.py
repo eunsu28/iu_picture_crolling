@@ -6,4 +6,6 @@ url = "https://www.google.co.kr/search?q=%EC%95%84%EC%9D%B4%EC%9C%A0&newwindow=1
 result = requests.get(url)
 soup = BeautifulSoup(result.text, "html.parser")
 
-print(soup)
+picture = soup.find_all("div", {"class": "bRMDJf islir"}, limit = 20)
+
+print(picture)
