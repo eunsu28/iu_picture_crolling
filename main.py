@@ -11,7 +11,9 @@ soup = BeautifulSoup(result.text, "html.parser")
 # imgs = soup.select('img') #select 는 css를 찾는 방식
 
 img = soup.find_all("img")
+
 for i in img:
+    # print(img)
     src = i.find("src")
     print(src)
 
