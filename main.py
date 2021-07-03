@@ -6,8 +6,10 @@ url = "https://www.google.com.hk/search?q=%EC%95%84%EC%9D%B4%EC%9C%A0&newwindow=
 
 result = requests.get(url)
 soup = BeautifulSoup(result.text, "html.parser")
-img = soup.find_all("img")
+img = soup.find_all("img", {"class" : "Q4LuWd"})
 for i in img:
     print(img)
+    if i == None:
+        print("none")
 
 
