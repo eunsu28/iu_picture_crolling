@@ -20,11 +20,13 @@ picture = []
 for i in a:
     n += 1
     str(n)
+    print(n)
     img_src = i.get("src")
-    picture.append(img_src)
-    file = urllib.request.urlopen(img_src).read()
-    with open(f"{n}iu.jpg",'wb') as f:
-        f.write(file)
+    print(img_src, end="\n")
+    urllib.request.urlretrieve(img_src, f"iu{n}.jpg")
+
+
+
 
     # urllib.request.urlretrieve(url + img_src, "/Users/kim-eunsu/Desktop/구글 이미지 크롤링/img")
     
