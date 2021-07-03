@@ -6,5 +6,6 @@ url = "https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%EC%95
 
 result = requests.get(url)
 soup = BeautifulSoup(result.text, "html.parser")
-a = soup.find_all("img")
-print(a)
+a = soup.find_all("img", {"class" : "_listImage"})
+for i in a:
+    print(i)
